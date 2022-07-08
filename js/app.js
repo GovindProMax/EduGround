@@ -46,12 +46,12 @@ function noteCards() {
     notesObj.forEach(function (element, index) {
         myHTML += `
         <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Note ${index + 1} </h5>
-                    <p class="card-text">${element}</p>
-                    <button id= "${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</a>
-                </div>
-            </div>`;
+                    <div class="card-body">
+                        <h5 class="card-title">Note ${index + 1}</h5>
+                        <p class="card-text"> ${element}</p>
+                        <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
+                    </div>
+                </div>`;
     });
 
     let notesElements = document.getElementById('notes');
@@ -99,18 +99,20 @@ function deleteNote(index) {
 
 }
 
-let search = document.getElementById('searchTxt')
+let search = document.getElementById('searchTxt');
+search.addEventListener("input", function(){
 
-searchTxt.addEventListener("input", function () {
     let searchVal = search.value.toLowerCase();
+    console.log('Input event fired!', searchVal);
     let noteCards = document.getElementsByClassName('noteCard');
-    Array.from(noteCards).forEach(function (element) {
-        let cardContent = element.getElementsByTagName("p")[0].innerText
-        if (cardContent.includes(searchVal)) {
-            element.style.display = "block"
+    Array.from(noteCards).forEach(function(element){
+        let cardTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
+        if(cardTxt.includes(searchVal)){
+            element.style.display = "block";
         }
-        else {
-            element.style.display = "none"
+        else{
+            element.style.display = "none";
         }
+        console.log(cardTxt);
     })
 })
