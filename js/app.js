@@ -100,19 +100,18 @@ function deleteNote(index) {
 }
 
 let search = document.getElementById('searchTxt');
-search.addEventListener("input", function(){
+search.addEventListener("input", function () {
 
     let searchVal = search.value.toLowerCase();
     console.log('Input event fired!', searchVal);
     let noteCards = document.getElementsByClassName('noteCard');
-    Array.from(noteCards).forEach(function(element){
+    Array.from(noteCards).forEach(function (element) {
         let cardTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
-        if(cardTxt.includes(searchVal)){
+        if (cardTxt.includes(searchVal)) {
             element.style.display = "block";
         }
-        else{
+        else {
             element.style.display = "none";
         }
-        console.log(cardTxt);
     })
 })
