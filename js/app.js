@@ -98,7 +98,7 @@ function deleteNote(index) {
     noteCards();
 
 }
- 
+
 let search = document.getElementById('searchTxt')
 
 searchTxt.addEventListener("input", function () {
@@ -112,6 +112,5 @@ searchTxt.addEventListener("input", function () {
         else {
             element.style.display = "none"
         }
-
     })
 })
