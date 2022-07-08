@@ -91,10 +91,27 @@ function deleteNote(index) {
     }
 
     //Delete the object at index
-    notesObj.splice(index,1)
-    
+    notesObj.splice(index, 1)
+
     //Update the local storage
     localStorage.setItem("currentNotes", JSON.stringify(notesObj));
     noteCards();
 
 }
+ 
+let search = document.getElementById('searchTxt')
+
+searchTxt.addEventListener("input", function () {
+    let searchVal = search.value.toLowerCase();
+    let noteCards = document.getElementsByClassName('noteCard');
+    Array.from(noteCards).forEach(function (element) {
+        let cardContent = element.getElementsByTagName("p")[0].innerText
+        if (cardContent.includes(searchVal)) {
+            element.style.display = "block"
+        }
+        else {
+            element.style.display = "none"
+        }
+
+    })
+})
