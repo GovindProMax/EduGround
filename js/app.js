@@ -7,8 +7,11 @@ let addBtn = document.getElementById('addBtn');
 //Add an event listner
 addBtn.addEventListener("click", function (e) {
 
-    //Working on the input text area 
+    //Working on the input text area for note content 
     let addTxt = document.getElementById('addTxt');
+
+    //Working on the input text area for note title
+    let addTitle = document.getElementById('addTitle');
 
     // Check to see the current local storage 
     let currentNotes = localStorage.getItem("currentNotes");
@@ -21,12 +24,19 @@ addBtn.addEventListener("click", function (e) {
         notesObj = JSON.parse(currentNotes);
     }
 
+    //Bundled object containing Title and Notes Content
+    let bundledNotesObj = {
+        title: addTitle.value,
+        text: addTxt.value
+    }
+
     //Add the value inside text area to the notesObj array
-    notesObj.push(addTxt.value);
+    notesObj.push(bundledNotesObj);
     //Update the local storage
     localStorage.setItem("currentNotes", JSON.stringify(notesObj));
     //Reset the value of the text area
     addTxt.value = "";
+    addTitle.value = "";
 
     noteCards();
 
@@ -47,8 +57,8 @@ function noteCards() {
         myHTML += `
         <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Note ${index + 1}</h5>
-                        <p class="card-text"> ${element}</p>
+                        <h5 class="card-title">Note ${element.title}</h5>
+                        <p class="card-text"> ${element.text}</p>
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                     </div>
                 </div>`;
