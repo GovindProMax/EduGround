@@ -1,20 +1,25 @@
-console.log("hey");
-
 // Constructor for book
 function Book(title, author, genre) {
     this.title = title;
     this.author = author;
     this.genre = genre;
 }
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("tableBody").deleteRow(i - 1);
+    let display = new Display();
+    display.show('success', 'Your book has been deleted.')
+}
 
 class Display {
     add(book) {
-        console.log("Adding to UI");
+        console.log("Adding book to the table");
         let tableBody = document.getElementById('tableBody');
         let uiString = `<tr>
                             <td>${book.title}</td>
                             <td>${book.author}</td>
-                            <td>${book.type}</td>
+                            <td>${book.genre}</td>
+                            <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
                         </tr>`;
         tableBody.innerHTML += uiString;
     }
@@ -24,8 +29,10 @@ class Display {
         libraryForm.reset();
     }
 
+
+    // Input Validation
     validate(book) {
-        if (book.title.length < 2 || book.author.length < 2) {
+        if (book.title.length < 2 || book.author.length < 2 || book.author.length > 100 || book.author.length > 100) {
             return false
         }
         else {
@@ -36,22 +43,24 @@ class Display {
     show(type, displayMessage) {
         let message = document.getElementById('message');
         let boldText;
-        if(type==='success'){
+        if (type === 'success') {
             boldText = 'Success';
         }
-        else{
+        else if (type === 'danger') {
             boldText = 'Error!';
         }
+        else if (type === 'rowDeleteSuccesfull') {
+            boldText = 'Success';
+        }
         message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
-                                <strong>${boldText}:</strong> ${displayMessage}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                                </button>
-                            </div>`;
+        <strong>${boldText}:</strong> ${displayMessage}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+        </button>
+    </div>`;
         setTimeout(function () {
             message.innerHTML = ''
         }, 5000);
-    
     }
 }
 
