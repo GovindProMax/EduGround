@@ -6,42 +6,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="stylesheet" href="/css/hover.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>Welcome To Indian Shatabdi News</title>
+  <title>News API |- Search News and Blog Articles on the Web</title>
 </head>
 
 <body>
   <div id="nav-placeholder"> </div>
   <div class="container mt-4">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username"
+      <input type="text" class="form-control" id="searchBar" placeholder="Search" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn btn-outline-success" type="button">Search</button>
+        <button class="btn btn-outline-success" type="submit" onclick="searchTextFunction()">Search</button>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        University
+    <div class="dropdown d-inline">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="searchEverywhereorTopHeadlines"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Top-Headlines
       </button>
-      <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+      <div id="menu" class="dropdown-menu" aria-labelledby="searchEverywhereorTopHeadlines">
         <form class="px-4 py-2">
-          <input type="search" class="form-control" id="searchUniversity" placeholder="All Universities"
+          <input type="search" class="form-control" id="searchEverywhereOrHeadlines" placeholder="Search"
             autofocus="autofocus">
         </form>
         <div id="menuItems"></div>
-        <div id="empty" class="dropdown-header">No coins found</div>
+        <div id="empty" class="dropdown-header">No headline type found</div>
       </div>
     </div>
   </div>
 
   <div class="container my-3">
-    <h3>Top News <span class="badge badge-secondary">by Indian shatabdi News</span></h3>
-    <hr>
+    <div>
+      <h2 class ="float-left"style="display: inline ;">News</h2>
+      <h2 span class=" badge badge-secondary float-left">powered by <a target="_blank" href="https://newsapi.org/">news API <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+      </svg></a></span></h2>
+   </div>
 
     <div id="newsAccordion" class="row container-fluid"></div>
   </div>
