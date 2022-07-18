@@ -15,6 +15,30 @@
 
 <body>
   <div id="nav-placeholder"> </div>
+  <div class="container mt-4">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-success" type="button">Search</button>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        University
+      </button>
+      <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+        <form class="px-4 py-2">
+          <input type="search" class="form-control" id="searchUniversity" placeholder="All Universities"
+            autofocus="autofocus">
+        </form>
+        <div id="menuItems"></div>
+        <div id="empty" class="dropdown-header">No coins found</div>
+      </div>
+    </div>
+  </div>
+
   <div class="container my-3">
     <h3>Top News <span class="badge badge-secondary">by Indian shatabdi News</span></h3>
     <hr>
