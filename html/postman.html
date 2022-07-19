@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Note Taker App</title>
+    <title>Postman Clone</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -15,18 +15,77 @@
 
     <div class="container my-3">
         <h3>PostMaster</h3>
-        <div class="input-group mb-4">
+        <div class="requestDropdown input-group mb-4">
             <select class="form-select flex-grow-0 w-auto" data-method>
                 <option value="GET" selected>GET</option>
                 <option value="POST">POST</option>
-                <option value="PUT">PUT</option>
-                <option value="PATCH">PATCH</option>
-                <option value="DELETE">DELETE</option>
             </select>
-            <input data-url required class="form-control" type="url" placeholder="https://example.com" />
-            <button type="submit" class="btn btn-primary">Send</button>
+            <input type="text" class="form-control" id="url" placeholder="Enter URL here">
+            <button type="submit" id="submit" class="btn btn-primary">Send</button>
         </div>
     </div>
+    <!-- Content type box -->
+    <div class="container">
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+                <div class="col-sm-10">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="contentType" id="jsonRadio" value="json"
+                            checked>
+                        <label class="form-check-label" for="json">
+                            JSON
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contentType" id="paramsRadio" value="params">
+                        <label class="form-check-label" for="params">
+                            Custom Parameters
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+        <!-- Parameters box - This will hide on clicking json option in content type  -->
+        <div id="parametersBox">
+            <div class="form-row">
+                <label for="url" class="col-sm-2 col-form-label">Parameter 1</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterKey1" placeholder="Enter Parameter 1 Key">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterValue1" placeholder="Enter Parameter 1 Value">
+                </div>
+                <button id="addParam" class="btn btn-primary">+</button>
+            </div>
+            <div id="params"></div>
+        </div>
+        <!-- Json Request box - This will hide on clicking parameters option in content type -->
+        <div class="my-3" id="requestJsonBox">
+            <div class="form-group row">
+                <label for="requestJsonText" class="col-sm-2 col-form-label">Enter Request Json</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="requestJsonText" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="my-3" id="responseJsonBox">
+            <div class="form-group row">
+                <label for="responseJsonText" class="col-sm-2 col-form-label">Response</label>
+                <div class="col-sm-10">
+                    <!-- <textarea class="form-control" id="responseJsonText" rows="3">Your response will appear here</textarea> -->
+
+                    <pre id='responsePre'
+                        class="language-javascript"> <code id='responsePrism' class="language-javascript"> Your response will appear here </code> </pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -37,9 +96,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="js/postman.js"></script>
+    <script src="/js/postman.js"></script>
     <!-- Reuse Navbar using jquery -->
     <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="prism.js"></script>
     <script>
         $.get("/html/nav.html", function (data) {
             $("#nav-placeholder").replaceWith(data);
