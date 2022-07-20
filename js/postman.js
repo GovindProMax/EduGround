@@ -63,7 +63,6 @@ function getElementFromString(string) {
 let submit = document.getElementById('submit');
 submit.addEventListener('click', () => {
     // Show please wait in the response box to request patience from the user
-    // document.getElementById('responseJsonText').value = "Please wait.. Fetching response...";
     document.getElementById('responsePrism').innerHTML = `<div class="text-center">
     <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
@@ -97,7 +96,6 @@ submit.addEventListener('click', () => {
         })
             .then(response => response.text())
             .then((text) => {
-                // document.getElementById('responseJsonText').value = text;
                 document.getElementById('responsePrism').innerHTML = text;
                 Prism.highlightAll();
             });
@@ -113,7 +111,6 @@ submit.addEventListener('click', () => {
         })
             .then(response => response.text())
             .then((text) => {
-                // document.getElementById('responseJsonText').value = text;
                 document.getElementById('responsePrism').innerHTML = text;
                 Prism.highlightAll();
             });

@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Postman Clone</title>
+    <link rel="stylesheet" href="/css/prism.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #responsePre {
+            max-height: 500px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="nav-placeholder"> </div>
 
     <div class="container my-3">
-        <h3>PostMaster</h3>
+        <div>
+            <h2 class="float-left" style="display: inline ;">PostMaster</h2>
+            <h2 span class=" badge badge-warning float-left">clone of<a target="_blank"
+                    href="https://www.postman.com/"> Postman <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                    </svg></a></span></h2>
+        </div>
         <div class="requestDropdown input-group mb-4">
             <select class="form-select flex-grow-0 w-auto" data-method>
                 <option value="GET" selected>GET</option>
@@ -99,7 +115,7 @@
     <script src="/js/postman.js"></script>
     <!-- Reuse Navbar using jquery -->
     <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="prism.js"></script>
+    <script src="/js/prism.js"></script>
     <script>
         $.get("/html/nav.html", function (data) {
             $("#nav-placeholder").replaceWith(data);
