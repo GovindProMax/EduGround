@@ -47,7 +47,7 @@ function deleteParameters() {
         item.addEventListener('click', (e) => {
 
             e.target.parentElement.remove();
-            
+
         })
     }
 }
