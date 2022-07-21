@@ -20,7 +20,7 @@
 
 This project is just me playing around trying to build useful tools
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 
@@ -31,7 +31,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 <!-- ROADMAP -->
@@ -48,7 +48,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 Distributed under the MIT License.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
