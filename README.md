@@ -18,8 +18,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This project is just me playing around trying to build useful tools
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -32,6 +30,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
+* And Lots More
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
