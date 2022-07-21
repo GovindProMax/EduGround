@@ -98,29 +98,7 @@ function apiCall(searchWhere, searchText) {
             newsAccordion.innerHTML = newsHtml;
         }
         else {
-            let json = JSON.parse(this.responseText);
-            let articles = json.articles;
-            console.log(articles);
-            let newsHtml = "";
-            articles.forEach(function (element, index) {
-                if (element["content"] != null) {
-                    // console.log(element, index)
-                    let news = `<div class="col-sm-4 mb-4">
-                                <div class="card h-100 ">
-                                    <div class="card-body">
-                                        <img class="card-img-top" src="${element["urlToImage"]}" alt="Card image cap">
-                                        <div class="card-body">
-                                        <h5 class="card-title">${element["title"]}</h5>
-                                        <p class="card-text">${element["content"]}</p>
-                                        <a href="${element['url']}" target="_blank" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`
-                    newsHtml += news;
-                }
-            });
-            newsAccordion.innerHTML = newsHtml;
+            console.log("Some error occured")
         }
     }
 
