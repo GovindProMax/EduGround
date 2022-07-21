@@ -65,10 +65,12 @@ function searchEverywhereOrTopHeadlines() {
 }
 
 function apiCall(searchWhere, searchText) {
-    const apiKey = 'f81e0c84fc5f454a830949aac7fdac51'
+    const apiKey = '7eb16212df2f3f069d4ce7ca4951ce74'
     const xhr = new XMLHttpRequest();
     let newsAccordion = document.getElementById('newsAccordion');
-    xhr.open('GET', `https://newsapi.org/v2/${searchWhere}?q=${searchText}&apiKey=${apiKey}`, true);
+    https://gnews.io/api/v4/search?q=example&token=API-Token
+    xhr.open('GET', `https://gnews.io/api/v4/search?q=${searchText}&token=${apiKey}`, true);
+    
 
     // What to do when response is ready
     xhr.onload = function () {
