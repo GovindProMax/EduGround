@@ -8,7 +8,7 @@ function searchTextFunction() {
 
 function searchEverywhereOrTopHeadlines() {
     //Initialize with the list of symbols
-    let names = ["Top-Headlines","Everything"]
+    let names = ["Breaking-News","World","Nation","Business","Technology","Entertainment","Sports","Science","Health"]
 
     //Find the input search box
     let search = document.getElementById("searchEverywhereOrHeadlines")
@@ -69,7 +69,7 @@ function apiCall(searchWhere, searchText) {
     const xhr = new XMLHttpRequest();
     let newsAccordion = document.getElementById('newsAccordion');
     https://gnews.io/api/v4/search?q=example&token=API-Token
-    xhr.open('GET', `https://gnews.io/api/v4/search?q=${searchText}&token=${apiKey}`, true);
+    xhr.open('GET', `https://gnews.io/api/v4/search?q=${searchText}&topic=${searchWhere}&token=${apiKey}`, true);
     
 
     // What to do when response is ready
@@ -85,7 +85,7 @@ function apiCall(searchWhere, searchText) {
                     let news = `<div class="col-sm-4 mb-4">
                                 <div class="card h-100 ">
                                     <div class="card-body">
-                                        <img class="card-img-top" src="${element["urlToImage"]}" alt="Card image cap">
+                                        <img class="card-img-top" src="${element["image"]}" alt="Card image cap">
                                         <div class="card-body">
                                         <h5 class="card-title">${element["title"]}</h5>
                                         <p class="card-text">${element["content"]}</p>
@@ -108,4 +108,4 @@ function apiCall(searchWhere, searchText) {
 }
 
 searchEverywhereOrTopHeadlines()
-apiCall('top-headlines', 'canada')
+apiCall('breaking-news', 'canada')
