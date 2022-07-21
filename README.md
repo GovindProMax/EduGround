@@ -30,7 +30,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-* And Lots More
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
