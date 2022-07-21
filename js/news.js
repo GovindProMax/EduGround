@@ -2,8 +2,8 @@ function searchTextFunction() {
     let searchText = document.getElementById('searchBar').value;
     console.log(searchText)
     searchWhere = document.getElementById('searchEverywhereorTopHeadlines').innerText.trim();
-    console.log(searchWhere)
-    apiCall(searchWhere, searchText)
+    searchKeyword=searchWhere.toLowerCase()
+    apiCall(searchKeyword, searchText)
 }
 
 function searchEverywhereOrTopHeadlines() {
@@ -68,7 +68,8 @@ function apiCall(searchWhere, searchText) {
     const apiKey = '7eb16212df2f3f069d4ce7ca4951ce74'
     const xhr = new XMLHttpRequest();
     let newsAccordion = document.getElementById('newsAccordion');
-    https://gnews.io/api/v4/search?q=example&token=API-Token
+    if (searchText=== ""){searchText='medicine'}
+    console.log(`https://gnews.io/api/v4/search?q=${searchText}&topic=${searchWhere}&token=${apiKey}`)
     xhr.open('GET', `https://gnews.io/api/v4/search?q=${searchText}&topic=${searchWhere}&token=${apiKey}`, true);
     
 
@@ -108,4 +109,4 @@ function apiCall(searchWhere, searchText) {
 }
 
 searchEverywhereOrTopHeadlines()
-apiCall('breaking-news', 'canada')
+apiCall('breaking-news', 'medicine')
