@@ -52,6 +52,21 @@ function deleteParameters() {
     }
 }
 
+//Add sample request in the url field
+document.getElementById("sampleGetRequest").addEventListener("click", () =>{
+    document.getElementById("url").value += "https://jsonplaceholder.typicode.com/posts";
+    success();
+ });
+
+// Disable the 'Send' button until it there is an entry in the url field
+function success() {
+    if(document.getElementById("url").value==="") { 
+           document.getElementById('submit').disabled = true; 
+       } else { 
+           document.getElementById('submit').disabled = false;
+       }
+   }
+
 
 
 function getElementFromString(string) {

@@ -30,14 +30,15 @@
                         <path fill-rule="evenodd"
                             d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
                     </svg></a></span></h2>
+                    <button style="float: right;" style="display: inline ;" type="button" id="sampleGetRequest" class="btn btn-info">Sample Request</button>
         </div>
         <div class="requestDropdown input-group mb-4">
             <select class="form-select flex-grow-0 w-auto" data-method>
                 <option value="GET" selected>GET</option>
                 <option value="POST">POST</option>
             </select>
-            <input type="text" class="form-control" id="url" placeholder="Enter URL here">
-            <button type="submit" id="submit" class="btn btn-primary">Send</button>
+            <input type="text" class="form-control" id="url" onkeyup="success()" placeholder="Enter URL here">
+            <button type="submit" id="submit" class="btn btn-primary" disabled>Send</button>
         </div>
     </div>
     <!-- Content type box -->
