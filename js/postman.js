@@ -54,7 +54,7 @@ function deleteParameters() {
 
 //Add sample request in the url field
 document.getElementById("sampleGetRequest").addEventListener("click", () =>{
-    document.getElementById("url").value += "https://jsonplaceholder.typicode.com/posts";
+    document.getElementById("url").value = "https://jsonplaceholder.typicode.com/posts";
     success();
  });
 
